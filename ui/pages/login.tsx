@@ -79,6 +79,8 @@ const Login: NextPage = () => {
           updateLoginFlowBody: {
             ...values,
             method: isAuthCode ? "totp" : "password",
+            // TODO: support both webauthn and password
+            // method: isAuthCode ? "totp" : "webauthn",
           } as UpdateLoginFlowBody,
         })
         .then(({ data }) => {
